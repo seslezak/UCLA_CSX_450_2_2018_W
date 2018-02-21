@@ -53,11 +53,7 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 hist_with_kde <- function (feature) {
     plot <- qplot(feature, geom="histogram", bins=200, alpha=I(.4), y = ..density..)+
         geom_vline(aes(xintercept=mean(feature, rm.na=T)), color="red", linetype="dashed", size=1)+
-<<<<<<< HEAD
-        geom_vline(aes(xintercept=median(feature, rm.na=T)), color="blue", linetype="dashed", size=1)+
-=======
         geom_vline(aes(xintercept=median(feature)), color="blue", linetype="dashed", size=1)+
->>>>>>> b217ad37b1972625c7f82894121457fcd385ccdf
         geom_density()
     return(plot)
 }
